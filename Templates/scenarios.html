@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br>
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+  vertical-align: middle;
+}
+</style>
+<h1>Record vs. Rest of League</h1>
+<p>What is your record if you played the team on top every week?</p>
+<table class="table table-hover center content-table" style="table-layout:fixed; width:55%">
+    <thead>
+        <tr>
+            {% for header in headings_scen %}
+                <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for row in data_scen %}
+        <tr>
+            {% for cell in row %}
+                <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+<h1>Schedule Switcher</h1>
+<p>What would your record be if you had the schedule of the team on top?</p>
+<table class="table table-hover center content-table" style="table-layout:fixed; width:55%;">
+    <thead>
+        <tr>
+            {% for header in headings2_scen %}
+                <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for row in data2_scen %}
+        <tr>
+            {% for cell in row %}
+                <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<p>Note: The diagonal (where your team intersects) represents your actual record</p>
+{% endblock %}

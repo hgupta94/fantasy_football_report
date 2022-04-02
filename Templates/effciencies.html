@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br>
+<style>
+h1 {text-align: center;}
+}
+</style>
+<h1>Lineup Efficiency</h1>
+<div style="text-align: center;">
+  <img src="data:image/png;base64,{{ eff_plot }}">
+</div>
+<br>
+<h1>Positional Efficiency</h1>
+<div style="text-align: center;">
+  <img src="data:image/png;base64,{{ pos_plot }}"
+</div>
+<p>Dashed line represents average league lineup efficiency</p>
+{% endblock %}

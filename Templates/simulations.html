@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br>
+<style>
+h1 {text-align: center;}
+h3 {text-align: center;}
+p {text-align: center;}
+
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+  vertical-align: middle;
+}
+</style>
+<h1>{{ week }} Betting Table</h1>
+<table class="table table-hover center content-table betting" style="table-layout:fixed; width:45%">
+    <thead>
+        <tr>
+            {% for header in headings_bets %}
+                <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for row in data_bets %}
+        <tr>
+            {% for cell in row %}
+                <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<p style="font-size:13px;"><i>{{ tstamp }}</i></p>
+<br>
+<h1>Season Simulation Results</h1>
+<p>Shows results &#8805;0.5%</p>
+<h3>Playoff Projections</h3>
+<table class="table table-hover center content-table" style="table-layout:fixed; width:50%">
+    <thead>
+        <tr>
+            {% for header in headings_p %}
+                <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for row in data_p %}
+        <tr>
+            {% for cell in row %}
+                <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+<h3>Projected Standings</h3>
+<table class="table table-hover center content-table" style="table-layout:fixed; width:50%">
+    <thead>
+        <tr>
+            {% for header in headings_s %}
+                <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for row in data_s %}
+        <tr>
+            {% for cell in row %}
+                <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+<h3>Wins Distribution</h3>
+<table class="table table-hover center content-table" style="table-layout:fixed; width:70%">
+    <thead>
+        <tr>
+            {% for header in headings_w %}
+                <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for row in data_w %}
+        <tr>
+            {% for cell in row %}
+                <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+<h3>Rank Distribution</h3>
+<table class="table table-hover center content-table betting" style="table-layout:fixed; width:70%">
+    <thead>
+        <tr>
+            {% for header in headings_r %}
+                <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for row in data_r %}
+        <tr>
+            {% for cell in row %}
+                <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+{% endblock %}

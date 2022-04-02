@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br>
+<style>
+h1 {text-align: center;}
+h3 {text-align: center;}
+p {text-align: center;}
+
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+  vertical-align: middle;
+}
+</style>
+<h1>League Records</h1>
+<p>Since 2018</p>
+<table class="table table-hover center content-table" style="table-layout:fixed; width:70%">
+    <thead>
+        <tr>
+            {% for header in headings_rec %}
+                <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for row in data_rec %}
+        <tr>
+            {% for cell in row %}
+                <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
